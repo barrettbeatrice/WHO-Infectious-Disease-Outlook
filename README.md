@@ -6,27 +6,26 @@ What are the effects of different countries’ government healthcare expenditure
 
 Based on data from 2010-2022, we created a predictive machine model re: the kinds of changes to health expenditures countries should make to lessen mortality rates via preemptive and more efficient healthcare. Using data during this time period, how can we assess regions whose infectious disease mortality rates are the most sensitively affected by changes in heallthcare expenditures?
 
-Databases: https://apps.who.int/nha/database/Select/Indicators/en https://www.who.int/data/collections
+Databases: https://apps.who.int/nha/database/Select/Indicators/en 
+https://www.who.int/data/collections
 
-Repository: https://github.com/lingerfeltcm/Project_4_Group_2.git
 
-Tasks:
-
-Barrett - Pushed Report, cleaned data, edited statistical coding, created logistic and chart visualizations.
-Ben - Merged and cleaned datasets, created SQL database, ran logistic and KNearest Neighbors predictive models.
-Cory - Started Repo, merged data sets, created expenditures starter code, created linear visualizations.
-Kelly - Cleaned Data
-ALL - Collaboratively Created a Categorical Machine Learning Model to Streamline Health Expenditure Recommendations
 Goals:
 Selecting (a) dataset(s) and formulating a problem and hypothesis, from broad to more specifically focused.
 Outlining questions to be answered, tasks to be done by each team member.
 Writing a one pager project proposal.
+
 Methodology:
+
 Data Extraction: pulled data from WHO datasets and merged them with inner join (i.e. WHO database countries with full data in both sets).
 Data Preprocessing: cleaned data sets by removing columns addressing non-infectious diseases, missing values/data fail to report, country outliers, and inconsistencies. Extracted relevant features from WHO data sets (see starter codes and dataframe merging). Store data in SQL database and ## query data based on targeted features. Read the SQL database into pandas for further analysis and modeling.
+
 Model Development: identified and utilized most effective machine learning models (logistic regression, decision trees, random forests TBD) and the Scikit-learn machine learning library.
+
 Model Evaluation and Statistical Analysis: analyze the statistical significance of tried regression models, displayed our ultimate machine learning model’s accuracy, precision, and recall.
+
 Interpretation and Visualization: Used Tableau and Scikit to present numerous visualizations to construct a "story".
+
 PURPOSE IN SUMMARY
 This project focuses on the use of World Health Organization infectious disease data in predicting and making policy recommendations for decreasing future mortality rates across countries and global regions.
 
@@ -84,11 +83,15 @@ for x in total_y:
         
     else:
         perc_of_total_med.append(0)
+        
 The code takes both the median and the mean of every target column. However, we only used the average.
+
 We repeated this methodology for each target variable 'Percent_of_Total','Age_Stnd_Per_100k', 'Death_rate_per_100k'.
 Both the training and testing predictions showed an overall accuracy below 70% for the logistic regression model.
+
 Using KNeighborsClassifier
 We chose a non-parametric model in order to achieve better accuracy because of our findings in exploratory analysis as well as the failure of the logistic model. Out reasoning was that we acknowledged the breadth and complexity of our data but with underlying structural comoponents still needing to be retained.
+
 RESULTS
 The analysis reveals that country-specific Health Expenditures play a significant role in predicting mortality rates associated with infectious diseases. Notably, the Current Health Expenditure (CHE) demonstrates a higher degree of statistical significance compared to Capital Health Expenditure (HK). Our findings suggest that Logistic regression, implemented through a KKNeighbors Classifier, offers the most accurate predictive capabilities, effectively navigating the complexity inherent in our dataset.
 
